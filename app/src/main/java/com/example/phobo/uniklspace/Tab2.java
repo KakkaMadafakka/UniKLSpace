@@ -105,8 +105,6 @@ public class Tab2 extends Fragment {
 
             }
         });*/
-
-        Snackbar.make(getActivity().findViewById(android.R.id.content), "UniKL VLE", Snackbar.LENGTH_SHORT).show();
         return v2;
     }
 }

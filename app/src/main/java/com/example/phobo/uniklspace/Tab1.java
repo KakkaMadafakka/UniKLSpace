@@ -1,6 +1,7 @@
 package com.example.phobo.uniklspace;
 
 import android.app.DownloadManager;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -87,6 +88,18 @@ public class Tab1 extends Fragment {
         {
            texttab1 = v1.findViewById(R.id.tvtab1);
            texttab1.setVisibility(View.VISIBLE);
+            Snackbar snackbar = Snackbar
+                    .make(getActivity().findViewById(android.R.id.content), "Please click setting to configure your connection", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("SETTING", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+                            /*Snackbar snackbar1 = Snackbar.make(getActivity().findViewById(android.R.id.content), "Message is restored!", Snackbar.LENGTH_SHORT);
+                            snackbar1.show();*/
+                        }
+                    });
+
+            snackbar.show();
 
         }
 
@@ -109,8 +122,6 @@ public class Tab1 extends Fragment {
 
             }
         });*/
-
-        Snackbar.make(getActivity().findViewById(android.R.id.content), "UniKL Ecitie", Snackbar.LENGTH_SHORT).show();
         return v1;
     }
 

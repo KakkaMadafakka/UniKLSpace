@@ -26,7 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Uh-Oh. No Internet Connection"
+        android:text="Uh-Oh No Internet Connection!\nPlease check you data connection or wifi"
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:visibility="gone" />
 
