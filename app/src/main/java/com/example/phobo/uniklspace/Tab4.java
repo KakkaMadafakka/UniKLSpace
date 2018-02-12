@@ -1,56 +1,48 @@
 package com.example.phobo.uniklspace;
 
-import android.app.DownloadManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.phobo.uniklspace.Home.NetworkState;
-
-import static android.content.Context.DOWNLOAD_SERVICE;
+import com.example.phobo.uniklspace.R;
 
 /**
  * Created by ash on 10/2/2018.
  */
-//Our class extending fragment
-public class Tab1 extends Fragment {
+
+public class Tab4 extends Fragment {
 
     WebView mWebView;
-    TextView texttab1;
+    TextView texttab2;
     ImageView Splashfuck;
 
     //Overriden method onCreateView
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View v1=inflater.inflate(R.layout.tab1, container, false);
+        View v2=inflater.inflate(R.layout.tab2, container, false);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            v1.setSystemUiVisibility(v1.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            v2.setSystemUiVisibility(v2.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            v1.setSystemUiVisibility(v1.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            v2.setSystemUiVisibility(v2.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
 
         if(NetworkState.isInternetAvailable(getActivity())) //returns true if internet available
         {
+            mWebView = v2.findViewById(R.id.uniklvle);
+            Splashfuck = v2.findViewById(R.id.splashlogo);
 
-            mWebView = v1.findViewById(R.id.uniklecitie);
-            Splashfuck = v1.findViewById(R.id.splashlogo);
 
             // Fucking settings for the webview
             WebSettings webSettings = mWebView.getSettings();
@@ -75,22 +67,20 @@ public class Tab1 extends Fragment {
                     super.onPageFinished(view, url);
                     Splashfuck.setVisibility(View.GONE);
                     mWebView.setVisibility(View.VISIBLE);
-
-
                 }
             });
-            mWebView.loadUrl("https://online2.unikl.edu.my/");
+            mWebView.loadUrl("https://www.mymesra.com.my/petrol-station-locator.aspx");
             mWebView.setVisibility(View.GONE);
             Splashfuck.setVisibility(View.VISIBLE);
         }
         else
         {
-           texttab1 = v1.findViewById(R.id.tvtab1);
-           texttab1.setVisibility(View.VISIBLE);
+            texttab2 = v2.findViewById(R.id.tvtab2);
+            texttab2.setVisibility(View.VISIBLE);
 
         }
 
-       /* mWebView.setDownloadListener(new DownloadListener() {
+        /*mWebView.setDownloadListener(new DownloadListener() {
 
             @Override
             public void onDownloadStart(String url, String userAgent,
@@ -109,10 +99,6 @@ public class Tab1 extends Fragment {
 
             }
         });*/
-
-//        Snackbar.make(getActivity().findViewById(android.R.id.content), "UniKL Ecitie", Snackbar.LENGTH_SHORT).show();
-        return v1;
+        return v2;
     }
-
-
 }
