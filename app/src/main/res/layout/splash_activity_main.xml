@@ -26,14 +26,17 @@
         android:background="@drawable/unikl"
         android:scaleType="fitCenter" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_launch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/splashlogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
-        android:text="Launch" />
+        android:layout_marginTop="17dp"
+        android:text="Welcome"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

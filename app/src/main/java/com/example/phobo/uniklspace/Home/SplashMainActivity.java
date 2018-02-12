@@ -19,7 +19,9 @@ public class SplashMainActivity extends AbsRuntimePermission {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity_main);
 
-        SharedPreferences settings=getSharedPreferences("prefs",0);
+
+
+        requestAppPermissions(new String[]{/*        SharedPreferences settings=getSharedPreferences("prefs",0);
         boolean firstRun=settings.getBoolean("firstRun",false);
         if(firstRun==false)//if running for first time
         //Splash will load for first time
@@ -39,9 +41,7 @@ public class SplashMainActivity extends AbsRuntimePermission {
             Intent a=new Intent(SplashMainActivity.this,MainActivity.class);
             startActivity(a);
             finish();
-        }
-
-        requestAppPermissions(new String[]{
+        }*/
                         Manifest.permission.READ_CONTACTS,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.WRITE_CONTACTS},
@@ -52,5 +52,8 @@ public class SplashMainActivity extends AbsRuntimePermission {
     public void onPermissionsGranted(int requestCode) {
         //Do anything when permisson granted
         Toast.makeText(getApplicationContext(), "Permission granted", Toast.LENGTH_LONG).show();
+        Intent i=new Intent(SplashMainActivity.this,MainActivity.class);
+        startActivity(i);
+        finish();
     }
 }
