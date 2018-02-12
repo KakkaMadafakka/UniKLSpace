@@ -13,12 +13,14 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/unikl"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
 
     <WebView
         android:id="@+id/uniklvle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
     </WebView>
 
@@ -30,4 +32,13 @@
         android:text="Uh-Oh No Internet Connection!\nPlease check you data connection or wifi"
         android:visibility="gone"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="1920dp"
+        android:layout_height="1080dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/p1" />
 </RelativeLayout>

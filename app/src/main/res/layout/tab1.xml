@@ -8,18 +8,20 @@
 
     <ImageView
         android:id="@+id/splashlogo"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="@android:dimen/thumbnail_width"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/unikl"
-        android:scaleType="fitCenter" />
+        android:cropToPadding="false"
+        android:scaleType="matrix"
+        android:visibility="visible" />
 
     <WebView
         android:id="@+id/uniklecitie"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </WebView>
+        android:layout_height="match_parent"
+        android:visibility="visible"></WebView>
 
     <TextView
         android:id="@+id/tvtab1"

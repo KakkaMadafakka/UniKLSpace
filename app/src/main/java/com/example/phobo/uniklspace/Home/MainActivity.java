@@ -3,10 +3,8 @@ package com.example.phobo.uniklspace.Home;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -15,6 +13,8 @@ import com.example.phobo.uniklspace.R;
 import com.example.phobo.uniklspace.Tab1;
 import com.example.phobo.uniklspace.Tab2;
 import com.example.phobo.uniklspace.Tab3;
+import com.example.phobo.uniklspace.Tab4;
+import com.example.phobo.uniklspace.Tab5;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Tab1 tab1;
     Tab2 tab2;
     Tab3 tab3;
+    Tab4 tab4;
+    Tab5 tab5;
     MenuItem prevMenuItem;
 
     @Override
@@ -51,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.action_contact:
                                 viewPager.setCurrentItem(2);
+                                break;
+                            case R.id.action_context_bar:
+                                viewPager.setCurrentItem(3);
+                                break;
+                            case R.id.action_container:
+                                viewPager.setCurrentItem(4);
                                 break;
                         }
                         return false;
@@ -105,9 +113,13 @@ public class MainActivity extends AppCompatActivity {
         tab1=new Tab1();
         tab2=new Tab2();
         tab3=new Tab3();
+        tab4=new Tab4();
+        tab5=new Tab5();
         adapter.addFragment(tab1);
         adapter.addFragment(tab2);
         adapter.addFragment(tab3);
+        adapter.addFragment(tab4);
+        adapter.addFragment(tab5);
         viewPager.setAdapter(adapter);
     }
 

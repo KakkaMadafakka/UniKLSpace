@@ -4,19 +4,34 @@
     <item
         android:id="@+id/action_call"
         android:checked="true"
-        android:icon="@drawable/uwhite"
-        android:title="ECitie"
+        android:icon="@drawable/home"
+        android:title="Home"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_chat"
         android:checked="false"
-        android:icon="@drawable/vlewhite"
-        android:title="VLE"
+        android:icon="@drawable/stat"
+        android:title="Performance Statistics"
+        app:showAsAction="ifRoom" />
+
+    <item
+    android:id="@+id/action_contact"
+    android:checked="false"
+    android:icon="@drawable/asset"
+    android:title="Asset Database"
+    app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_context_bar"
+        android:checked="false"
+        android:icon="@drawable/audit"
+        android:title="Inspection And Audit"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_contact"
+        android:id="@+id/action_container"
         android:checked="false"
-        android:icon="@drawable/timetablewhite"
-        android:title="Timetable"
+        android:icon="@drawable/bbs"
+        android:title="Behavioral Safety"
         app:showAsAction="ifRoom" />
+
+
 </menu>
