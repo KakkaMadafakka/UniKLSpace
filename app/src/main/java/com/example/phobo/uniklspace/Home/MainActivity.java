@@ -101,16 +101,18 @@ public class MainActivity extends AppCompatActivity {
 
         setupViewPager(viewPager);
 
+
         bottomNavigationView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
 
             @Override
-            public void onSwipeRight() {
-                super.onSwipeRight();
+            public void onSwipeTop() {
+                super.onSwipeTop();
                 Intent shareIntent = new Intent(MainActivity.this, ListBatchesActivity.class);
                 startActivity(shareIntent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
