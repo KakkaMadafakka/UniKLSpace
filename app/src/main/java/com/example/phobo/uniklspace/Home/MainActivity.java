@@ -1,5 +1,6 @@
 package com.example.phobo.uniklspace.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -15,6 +16,7 @@ import com.example.phobo.uniklspace.R;
 import com.example.phobo.uniklspace.Tab1;
 import com.example.phobo.uniklspace.Tab2;
 import com.example.phobo.uniklspace.Tab3;
+import com.example.phobo.uniklspace.Timetable.ListBatchesActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -98,6 +100,17 @@ public class MainActivity extends AppCompatActivity {
         */
 
         setupViewPager(viewPager);
+
+        bottomNavigationView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Intent shareIntent = new Intent(MainActivity.this, ListBatchesActivity.class);
+                startActivity(shareIntent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewPager) {
