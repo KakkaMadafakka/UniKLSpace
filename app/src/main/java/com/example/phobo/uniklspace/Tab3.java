@@ -12,8 +12,13 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.phobo.uniklspace.Timetable.ListBatchesActivity;
+import com.example.phobo.uniklspace.Timetable.AddRecordActivity;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  * Created by ash on 10/2/2018.
@@ -21,7 +26,7 @@ import com.example.phobo.uniklspace.Timetable.ListBatchesActivity;
 
 public class Tab3 extends Fragment {
 
-    Button timetablecall;
+    TextView timetableadd,day;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,17 +36,27 @@ public class Tab3 extends Fragment {
             v.setSystemUiVisibility(v.getSystemUiVisibility());
         }
 
-        timetablecall=(Button)v.findViewById(R.id.btn_beta);
-        timetablecall.setOnClickListener(new View.OnClickListener() {
+        day = v.findViewById(R.id.tv_day);
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        String dayOfTheWeek = sdf.format(d);
+
+        day.setText(dayOfTheWeek);
+
+        if (dayOfTheWeek=="Sunday"){
+
+        }
+        timetableadd= v.findViewById(R.id.tv_add_btn);
+        timetableadd.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent shareIntent = new Intent(getContext(), ListBatchesActivity.class);
+                Intent shareIntent = new Intent(getContext(), AddRecordActivity.class);
                 startActivity(shareIntent);
             }
         });
-
         return v;
     }
+
 }

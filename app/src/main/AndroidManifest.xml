@@ -24,13 +24,8 @@
         </activity>
 
         <activity android:name=".Home.MainActivity"  android:theme="@style/AppTheme"/>
+        <activity android:name=".Timetable.AddRecordActivity"  android:theme="@style/AppTheme"/>
 
-        <activity android:label="Add Batch"   android:name=".Timetable.ListBatchesActivity" />
-        <activity android:label="Add Batch"   android:name=".Timetable.AddBatchActivity" />
-        <activity android:label="List Classes"   android:name=".Timetable.ListClassesActivity" />
-        <activity android:label="Add Class"   android:name=".Timetable.AddClassActivity" />
-        <activity android:label="Update Batch"   android:name=".Timetable.UpdateBatchActivity" />
-        <activity android:label="Update Class"   android:name=".Timetable.UpdateClassActivity" />
 
     </application>
 

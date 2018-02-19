@@ -16,7 +16,6 @@ import com.example.phobo.uniklspace.R;
 import com.example.phobo.uniklspace.Tab1;
 import com.example.phobo.uniklspace.Tab2;
 import com.example.phobo.uniklspace.Tab3;
-import com.example.phobo.uniklspace.Timetable.ListBatchesActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         setupViewPager(viewPager);
 
 
-        bottomNavigationView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+       /* bottomNavigationView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
 
             @Override
             public void onSwipeTop() {
@@ -111,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(shareIntent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
-        });
+        });*/
 
     }
 
